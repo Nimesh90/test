@@ -19,6 +19,6 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('bookingRooms.urls'))
+    path('',include('bookingRooms.urls')),
     #if someone comes for request hand that request to bookingRooms.urls.
 ]

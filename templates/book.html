@@ -12,7 +12,7 @@
         <div class="header">
             <h1> Filling the form</h1>
         </div>
-        <form action="/contact" method="POST">
+        <form action="book" method="POST">
             <!-- Inorder, to protect from csrf attacks we are using csrf token-->
             {% csrf_token %}
             <!-- Name is very important in inputType rather then id. -->
