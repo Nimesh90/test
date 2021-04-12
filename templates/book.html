@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title></title>
+    {% comment %} {% load static %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}"> {% endcomment %}
+</head>
+
+<body>
+
+    <body>
+
+        <div class="header">
+            <h1> Filling the form</h1>
+        </div>
+        <form action="/contact" method="POST">
+            <!-- Inorder, to protect from csrf attacks we are using csrf token-->
+            {% csrf_token %}
+            <div class="contact">
+                <h3>Contact Us</h3>
+            </div>
+            <!-- Name is very important in inputType rather then id. -->
+            <div class="ContactName">
+                <label for="Contact name">Contact name</label>
+                <input type="text" name="name" id="name" placeholder="First name Last name" />
+            </div>
+            <div class="mobliePhoneNumb">
+                <label for="Moblie phone number">Number</label>
+                <input type="phone" name="phone" id="phone" maxlength="11" placeholder="Number" />
+            </div>
+            <div class="specialRequest">
+                <label for="Special request">Specially request(optional)</label>
+                <input type='text' name="description" id="description" placeholder="250 words" />
+            </div>
+
+            <!-- <div class="nameOfCard">
+                <label for="Card">Name on card*</label>
+                <input type='card' name="card" id="card" />
+            <!-- </div> -->
+            <div class="Card">
+                <section>
+                    <label for="Card">Debit/Credit card number</label>
+                    <input type='card' name="cardNumber" id="cardNumber" />
+                </section>
+                <section>
+                    <label for="expirationDate">Expiration date</label>
+                    <section>
+                        <input type='month' name="month" id="month" />
+                    </section>
+                </section>
+                <!-- <section>
+                    <label for="Secuity Code">Security code*</label>
+                    <input type='security Code' name="securityCode" id="securityCode" />
+                    <label for="Billing ZipCode">Billing Zip Code*</label>
+                    <input type='code' name="billingZipCode" id="billingZipCode" />
+                </section> -->
+            </div>
+            <div class="email">
+                <section>
+                    <h3>Manage your Booking</h3>
+                </section>
+                <label for="Email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" />
+            </div>
+            <div class="createAccount">
+                <section>
+                    <h3>Create an account</h3>
+                </section>
+                <section>
+                    <label for="createPassword">Create Password</label>
+                    <input type='createPassword' name="createPassword" id="createPasswrod"
+                        placeholder="Create Password" />
+                </section>
+                <section>
+                    <label for="Conform Password">Conform Password</label>
+                    <input type='conformPassword' name="conformPassword" id="conformPassword"
+                        placeholder="Conform Password" />
+                </section>
+            </div> 
+
+            <button type="submit" id="save">Complete Booking</button>
+        </form>
+    </body>
+
+</html>
