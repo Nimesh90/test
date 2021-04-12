@@ -8,6 +8,7 @@ class Book(models.Model):
     email = models.TextField(max_length=24)
     startDate = models.DateField(max_length=2)
     endDate = models.DateField(max_length = 2)
+    #return name and email edits the admin page.
     def __str__(self):
             return self.name +" - "+ self.email
 
